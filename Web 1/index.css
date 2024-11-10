@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    background-color: #1e6aec;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+h3{
+    color: whitesmoke;
+}
+#tag{
+    display: inline;
+    padding: 5px 23px 5px 18px;
+    border-radius: 30px;
+    background-color: #f48d27;
+    color: white;
+    position: relative;
+}
+#tag::after{
+    position: absolute;
+    top: 8px;
+    right: 6px;
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+}
+.container{
+    width: 11.5cm;
+}
+.container > *{
+    width: 100%;
+    margin: 8px;
+}
