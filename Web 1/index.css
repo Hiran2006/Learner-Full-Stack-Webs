@@ -10,16 +10,19 @@ body{
 }
 h3{
     color: whitesmoke;
+    margin-top: 8px;
 }
-#tag{
+.tag{
     display: inline;
     padding: 5px 23px 5px 18px;
     border-radius: 30px;
     background-color: #f48d27;
     color: white;
     position: relative;
+    margin-right: 3px;
+    line-height: 40px;
 }
-#tag::after{
+.tag::after{
     position: absolute;
     top: 8px;
     right: 6px;
@@ -34,5 +37,4 @@ h3{
 }
 .container > *{
     width: 100%;
-    margin: 8px;
 }
