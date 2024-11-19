@@ -1,13 +1,13 @@
 const button=document.getElementById("addBtn");
 const main=document.querySelector(".main");
-button.addEventListener("click",addNote);
+button.addEventListener("click",()=>{addNote()});
 LoadPage();
 function LoadPage(){
     const data = JSON.parse(localStorage.getItem("note"));
     data.forEach((d)=>addNote(d));
 }
 
-function addNote(text = ""){
+function addNote(text=""){
     const node = document.createElement("div");
     node.classList.add("note");
     console.log(text);

@@ -25,6 +25,7 @@
 .tool img{
     width: 18px;
     padding: 5px;
+    cursor: pointer;
 }
 .note textarea{
     box-sizing: border-box;
