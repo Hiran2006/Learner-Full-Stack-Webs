@@ -7,7 +7,7 @@ const date = new Date();
 
 const storage = multer.diskStorage({
     destination:(req,file,cb)=>{
-        cb(null,'uploads/');
+        cb(null,'localstorage/');
     },
     filename : (req,file,cb)=>{
         cb(null, file.originalname);
@@ -19,12 +19,11 @@ const upload = multer({storage:storage});
 app.use('/',express.static("public"));
 
 app.post('/upload',upload.single("file"),(req, res)=>{
-    console.log(req.file);
     res.redirect('/');
 });
-app.use('/localStorage',express.static('upload'));
+app.use('/uploaded',express.static('localstorage'));
 app.get('/view',(req, res)=>{
-    const path ='uploads/'
+    const path ='localstorage/'
     fs.readdir(path,(err,file)=>{
         if(err)
             console.log(err);
@@ -32,5 +31,14 @@ app.get('/view',(req, res)=>{
             res.json({file});
         }
     })
+})
+
+app.delete('/delete/:filename', (req,res)=>{
+    const filename = req.params.filename;
+    const location = `localstorage/${filename}`;
+    if(fs.existsSync(location)){
+        fs.unlinkSync(location);
+        res.send("Successfuly deleted");
+    }
 })
 app.listen(8080);
