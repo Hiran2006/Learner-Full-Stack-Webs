@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    margin: 20px;
+}
+header h1{
+    color: green;
+    padding: 1rem 10rem;
+}
+.container > div > form{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.container > div button{
+    width: 8rem;
+    border: none;
+    padding: 10px;
+    background-color: crimson;
+    color: white;
+    border-radius: 10px;
+}
+.container > div{
+    margin-bottom: 20px;
+}
+.container > div h2,.container > div input{
+    margin-bottom: 10px;
+}
+.container .upload button{
+    background-color: rgb(29, 105, 237);
+}
+.container input, .container select{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 30%;
+}
+.container input::-webkit-file-upload-button{
+    width: 120px;
+    border: none;
+    border-right: 1px solid black;
+    padding: 7px;
+}
+.container select{
+    padding: 7px;
+    margin-bottom: 10px;
+}
+#file-list{
+    display: flex;
+    flex-direction: column;
+}
+#file-list a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    list-style: none;
+    width: 40vw;
+    background-color: #666;
+    margin-top: 10px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+}
+#file-list li{
+    list-style: none;
+}

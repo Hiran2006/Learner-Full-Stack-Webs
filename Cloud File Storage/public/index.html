@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Storage</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header><h1>Cloud Storage</h1></header>
+    <section class="container">
+        <div class="upload">
+            <h2>Upload File</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <button>Upload</button>
+            </form>
+        </div>
+        <div class="delete">
+            <h2>Upload File</h2>
+            <form>
+                <select name="file" id="file">
+                    <option value="none">None</option>
+                </select>
+                <button>Delete</button>
+            </form>
+        </div>
+        <section class="uploaded">
+            <h2>Uploaded</h2>
+            <ul id="file-list">
+            </ul>
+        </section>
+    </section>
+    <script src="./index.js"></script>
+</body>
+</html>
