@@ -17,7 +17,7 @@ header h1{
     letter-spacing: 5px;
     font-size: 40px;
     background-color: #eeeeeefa;
-    box-shadow: 0px 80px 30px #fffffffa;
+    box-shadow: 0px 80px 80px #fffffffa;
 }
 header{
     position: sticky;

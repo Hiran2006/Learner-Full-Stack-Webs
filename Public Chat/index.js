@@ -1,15 +1,21 @@
 const express = require("express");
-const io = require("socket.io")();
+const http = require("http");
+const socketIo = require("socket.io");
+
 const app = express();
-const port = 8080;
+const server = http.createServer(app);
+const io = new socketIo.Server(http);
 
 app.use('/',express.static('public'));
-const midPort = app.listen(port,()=>{
-    console.log("listen to port "+port);
+
+app.get('/',(req, res)=>{
+    res.sendFile('/index.html');
+});
+
+io.on('connection',()=>{
+    console.log("Player Connected");
 })
 
-io.on('connection',client=>{
-    client.emit
-})
-io.listen(midPort);
+server.listen(8080);
+
 
