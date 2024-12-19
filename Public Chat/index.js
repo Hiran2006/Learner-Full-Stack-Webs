@@ -1,18 +1,15 @@
 const express = require("express");
+const {Server} = require("socket.io");
 const http = require("http");
-const socketIo = require("socket.io");
 
 const app = express();
 const server = http.createServer(app);
-const io = new socketIo.Server(http,{serveClient:true});
+const io = new Server(server);
 
-app.use('/',express.static('public'));
+app.use(express.static('public'));
 
-
-io.on('connection',(socket)=>{
-    console.log("Player Connected");
-})
+io.on('connection',()=>{
+    console.log("Connected");
+});
 
 server.listen(8080);
-
-
