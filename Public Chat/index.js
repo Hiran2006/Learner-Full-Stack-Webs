@@ -4,15 +4,12 @@ const socketIo = require("socket.io");
 
 const app = express();
 const server = http.createServer(app);
-const io = new socketIo.Server(http);
+const io = new socketIo.Server(http,{serveClient:true});
 
 app.use('/',express.static('public'));
 
-app.get('/',(req, res)=>{
-    res.sendFile('/index.html');
-});
 
-io.on('connection',()=>{
+io.on('connection',(socket)=>{
     console.log("Player Connected");
 })
 
