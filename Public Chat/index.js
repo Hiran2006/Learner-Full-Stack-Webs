@@ -8,8 +8,12 @@ const io = new Server(server);
 
 app.use(express.static('public'));
 
-io.on('connection',()=>{
-    console.log("Connected");
+io.on('connection',(socket)=>{
+    console.log(`ID ${socket.id} connected`);
+});
+
+io.on('send',(socket)=>{
+    console.log("data received");
 });
 
 server.listen(8080);
