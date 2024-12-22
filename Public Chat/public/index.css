@@ -44,6 +44,8 @@
     filter: blur(2pt);
     transition: all 5s;
     overflow: hidden;
+    height: 100vh;
+    position: relative;
 }
 .chat-box header{
     text-align: center;
@@ -70,7 +72,7 @@
 }
 .chat-container > div{
     width: 40%;
-    background: #999;
+    background: #eee;
     padding: 10px 20px;
     border-radius: 10px;
     margin: 8px 20px;
@@ -85,4 +87,31 @@
 }
 .chat-container .message{
     line-height: 30px;
+}
+.chat-sender{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+.chat-sender > div{
+    border-radius: 10px 0 0 10px;
+    padding: 5px 10px;  
+    width: 230px;
+    background-color: #ddd;
+}
+.chat-sender input{
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+.chat-sender button{
+    border-radius: 0 10px 10px 0;
+    border: none;
+    padding: 5px 10px; 
+    background-color: #ccc; 
 }

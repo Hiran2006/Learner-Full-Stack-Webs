@@ -19,8 +19,9 @@ function onEnterName(){
 }
 
 function sendChat(){
-    const textChat = document.querySelector(".chat-sender input").value;
-    const data = {name:logName,content:textChat};
+    const textChat = document.querySelector(".chat-sender input");
+    const data = {name:logName,content:textChat.value};
+    textChat.value="";
     generateChat(data,"sended");
     socket.emit("send",data);
 }
