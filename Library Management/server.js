@@ -1,12 +1,19 @@
 const express = require('express');
 const app = express();
 
+
+app.use(express.static('public'));
 app.get('/', (req, res) => {
-    console.log('Hello World');
+    res.sendFile('public/index.html');
 });
 
-app.listen(8080,(err)=>{
-    if(err){
+app.get('/login', (req, res) => {
+    const data = req.query;
+    console.log(data);
+});
+
+app.listen(8080, (err) => {
+    if (err) {
         console.log('Error in running the server');
         return;
     }
