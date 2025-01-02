@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <style>
+      table {
+        width: 100%;
+        text-align: center;
+        border-spacing: 0;
+        font-family: sans-serif;
+      }
+      table,
+      tr {
+        border: 1px solid #666;
+      }
+      td,
+      th {
+        padding: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        border: 1px solid #666;
+        padding: 2px 5px;
+        background-color: white;
+      }
+      table tr:nth-child(even) {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Books</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Pages.No</th>
+        <th>Price</th>
+        <th>Availability</th>
+        <th>Issue</th>
+        <th>Return</th>
+        <th>Delete</th>
+      </tr>
+      <% books.forEach((book,id) => { %>
+      <tr>
+        <td><%= book.bookName %></td>
+        <td><%= book.bookAuthor %></td>
+        <td><%= book.bookPages %></td>
+        <td><%= book.bookPrice %></td>
+        <td><%= book.bookState %></td>
+        <td><a href="/library/issue/<%= id %>">Issue</a></td>
+        <td><a href="/library/return/<%= id %>">Return</a></td>
+        <td><a href="/library/delete/<%= id %>">Delete</a></td>
+      </tr>
+      <% }); %>
+    </table>
+    <h2>Add</h2>
+    <form action="/" method="post">
+      <input type="text" placeholder="Book Name" name="bookName" />
+      <input type="text" placeholder="Book Author" name="bookAuthor" />
+      <input type="text" placeholder="Book Pages" name="bookPages" />
+      <input type="text" placeholder="Book Price" name="bookPrice" />
+      <button type="submit">Add</button>
+    </form>
+  </body>
+</html>
